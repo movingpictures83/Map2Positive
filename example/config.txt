@@ -1,0 +1,2 @@
+Prefix plugins/Map2Positive/example/
+Plugin Map2Positive inputfile corrP.csv outputfile corrP.mapped.eda

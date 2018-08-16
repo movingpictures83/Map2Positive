@@ -21,9 +21,9 @@ class Map2PositivePlugin:
          self.bacteria.remove('\"\"')
       self.n = len(self.bacteria)
       for i in range(self.n):
+         self.bacteria[i] = self.bacteria[i].strip()
          if self.bacteria[i][0] == '\"':
             self.bacteria[i] = self.bacteria[i][1:len(self.bacteria[i])-1]
-         self.bacteria[i] = self.bacteria[i].strip()
       self.ADJ = []
       i = 0
       for i in range(self.m):
@@ -42,7 +42,11 @@ class Map2PositivePlugin:
             
       for i in range(self.m):
          for j in range(self.n):
-            filestuff2.write(self.bacteria[i]+' '+'('+'interacts with'+')'+' '+self.bacteria[j]+'\t'+str(self.ADJ[i][j]+1)+'\n')
+            if (self.ADJ[i][j] <= 0):
+               filestuff2.write(self.bacteria[i]+' '+'('+'pp'+')'+' '+self.bacteria[j]+'\t'+str(0)+'\n')
+            else:
+               filestuff2.write(self.bacteria[i]+' '+'('+'pp'+')'+' '+self.bacteria[j]+'\t'+str(self.ADJ[i][j])+'\n')
+            #filestuff2.write(self.bacteria[i]+' '+'('+'pp'+')'+' '+self.bacteria[j]+'\t'+str(self.ADJ[i][j]+1)+'\n')
 
 
 

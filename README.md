@@ -2,7 +2,7 @@
 # Language: Python
 # Input: CSV (negative and positive values)
 # Output: EDA (with [-1, 1] range mapped to [0, 2]
-# Tested with: PluMA 1.0, Python 3.6 
+# Tested with: PluMA 1.1, Python 3.6 
 
 PluMA plugin to take a signed and weighted network (edges assumed to be in the range [-1, 1])
 and convert it to an unsigned network with edges assumed to be in the range [0, 2].
